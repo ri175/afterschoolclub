@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>After school club</title>
+        <script src="https://unpkg.com/vue"> </script>
+    </head>
+    <body>
+        <div id="app">
+            <header>
+                <h1 v-text="sitename"></h1>
+                <button>
+                    {{cartItemCount}} Check out
+                </button>
+            </header>
+            <div>
+                <h1 v-text="product.subject"></h1>
+                <img v-bind:src="product.image" height="125px" width="125px">
+                <p v-text="product.location"></p>
+                <p>Price: £{{product.price}} per hour</p>
+                <p>Spaces available {{product.availableSpaces}}</p>
+                <button v-on:click='addToCart' v-if="available"  value="add">
+                    Add to cart
+                </button>
+                <button disabled='disabled' v-else>
+                    Add to cart
+                </button>
+                
+            </div>
+            
+        </div>
+        
+
+        <script type="text/javascript">
+        var webstore = new Vue({ // root of the vue instance
+            el: '#app', // link to element in div tags
+            data: {
+                sitename: 'After school club',
+                product: {
+                    id: 1000,
+                    subject: "English",
+                    location: "London",
+                    price: 25,
+                    image: "english.jpg",
+                    availableSpaces: 5,
+                },
+                cart: [], //cart array
+                
+            },
+            methods: {
+                addToCart: function(){
+                    this.cart.push(this.product.id)
+                },
+
+                
+            },
+            computed: { //computed property object
+                cartItemCount: function (){
+                    return this.cart.length || ''; // its value will be calculated when it called
+                },
+                available : function (){ // funtion to limit customers to buy how many hours are available
+                    return this.product.availableSpaces > this.cartItemCount;
+                }
+            }
+        });
+        </script>
+    </body>
+</html>
