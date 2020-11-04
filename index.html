@@ -7,11 +7,11 @@
         <div id="app">
             <header>
                 <h1 v-text="sitename"></h1>
-                <button>
+                <button v-on:click='showCheckout'>
                     {{cartItemCount}} Check out
                 </button>
             </header>
-            <div>
+            <div v-if='showProduct'>
                 <h1 v-text="product.subject"></h1>
                 <img v-bind:src="product.image" height="125px" width="125px">
                 <p v-text="product.location"></p>
@@ -23,7 +23,7 @@
                 <button disabled='disabled' v-else>
                     Add to cart
                 </button>
-                
+                <div v-else> <!--shows checkout page--> </div> 
             </div>
             
         </div>
@@ -43,14 +43,17 @@
                     availableSpaces: 5,
                 },
                 cart: [], //cart array
-                
+                showProduct: true,
             },
             methods: {
                 addToCart: function(){
                     this.cart.push(this.product.id)
                 },
 
-                
+                showCheckout: function() {
+                    if (this.showProduct) this.showProduct = false ;
+                    else this.showProduct = true ; // this will switch the values
+                },
             },
             computed: { //computed property object
                 cartItemCount: function (){
