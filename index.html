@@ -1,4 +1,4 @@
-<html>
+<html> hello
     <head>
         <title>After school club</title>
         <script src="https://unpkg.com/vue"> </script>
@@ -8,11 +8,13 @@
             <header>
                 <h1 v-text="sitename"></h1>
                 <button v-on:click='showCheckout'>
-                    {{cartItemCount}} Check out
+                    {{cartItemCount}} Check Out
                 </button>
             </header>
-            <div v-if='showProduct'>
-                <h1 v-text="product.subject"></h1>
+            <div v-if='showProduct'> <!--this is the product page-->
+                
+                <div style="float: left; padding: 35px;">
+                <h1 v-text="product.subject"></h1>  <!--This section is for the subject english-->
                 <img v-bind:src="product.image" height="125px" width="125px">
                 <p v-text="product.location"></p>
                 <p>Price: £{{product.price}} per hour</p>
@@ -23,9 +25,194 @@
                 <button disabled='disabled' v-else>
                     Add to cart
                 </button>
-                <div v-else> <!--shows checkout page--> </div> 
-            </div>
+                </div>
+
+                <div style="float: left; padding: 35px;">
+                <h1 v-text="product2.subject"></h1> <!--This section is for the subject maths-->
+                <img v-bind:src="product2.image" height="125px" width="125px">
+                <p v-text="product2.location"></p>
+                <p>Price: £{{product2.price}} per hour</p>
+                <p>Spaces available {{product2.availableSpaces}}</p>
+                <button v-on:click='addToCart' v-if="available"  value="add">
+                    Add to cart
+                </button>
+                <button disabled='disabled' v-else>
+                    Add to cart
+                </button>
+                </div>
             
+                <div style="float: left; padding: 35px;">
+                <h1 v-text="product3.subject"></h1> <!--This section is for the subject biology-->
+                <img v-bind:src="product3.image" height="125px" width="125px">
+                <p v-text="product3.location"></p>
+                <p>Price: £{{product3.price}} per hour</p>
+                <p>Spaces available {{product3.availableSpaces}}</p>
+                <button v-on:click='addToCart' v-if="available"  value="add">
+                    Add to cart
+                </button>
+                <button disabled='disabled' v-else>
+                    Add to cart
+                </button>
+                </div>
+            
+                <div style="float: left; padding: 35px;">
+                <h1 v-text="product4.subject"></h1> <!--This section is for the subject chemistry-->
+                <img v-bind:src="product4.image" height="125px" width="125px">
+                <p v-text="product4.location"></p>
+                <p>Price: £{{product4.price}} per hour</p>
+                <p>Spaces available {{product4.availableSpaces}}</p>
+                <button v-on:click='addToCart' v-if="available"  value="add">
+                    Add to cart
+                </button>
+                <button disabled='disabled' v-else>
+                    Add to cart
+                </button>
+                </div>
+
+                <div style="float: left; padding: 35px;">
+                <h1 v-text="product5.subject"></h1> <!--This section is for the subject physics-->
+                <img v-bind:src="product5.image" height="125px" width="125px">
+                <p v-text="product5.location"></p>
+                <p>Price: £{{product5.price}} per hour</p>
+                <p>Spaces available {{product5.availableSpaces}}</p>
+                <button v-on:click='addToCart' v-if="available"  value="add">
+                    Add to cart
+                </button>
+                <button disabled='disabled' v-else>
+                    Add to cart
+                </button>
+                </div>
+            
+                <div style="float: left; padding: 35px;">
+                <h1 v-text="product6.subject"></h1> <!--This section is for the subject art-->
+                <img v-bind:src="product6.image" height="125px" width="125px">
+                <p v-text="product6.location"></p>
+                <p>Price: £{{product6.price}} per hour</p>
+                <p>Spaces available {{product6.availableSpaces}}</p>
+                <button v-on:click='addToCart' v-if="available"  value="add">
+                    Add to cart
+                </button>
+                <button disabled='disabled' v-else>
+                    Add to cart
+                </button>
+                </div>
+           
+                <div style="float: left; padding: 35px;">
+                <h1 v-text="product7.subject"></h1> <!--This section is for the subject foodtech-->
+                <img v-bind:src="product7.image" height="125px" width="125px">
+                <p v-text="product7.location"></p>
+                <p>Price: £{{product7.price}} per hour</p>
+                <p>Spaces available {{product7.availableSpaces}}</p>
+                <button v-on:click='addToCart' v-if="available"  value="add">
+                    Add to cart
+                </button>
+                <button disabled='disabled' v-else>
+                    Add to cart
+                </button>
+                </div>
+            
+                <div style="float: left; padding: 35px;">
+                <h1 v-text="product8.subject"></h1> <!--This section is for the subject history--> 
+                <img v-bind:src="product8.image" height="125px" width="125px">
+                <p v-text="product8.location"></p>
+                <p>Price: £{{product8.price}} per hour</p>
+                <p>Spaces available {{product8.availableSpaces}}</p>
+                <button v-on:click='addToCart' v-if="available"  value="add">
+                    Add to cart
+                </button>
+                <button disabled='disabled' v-else>
+                    Add to cart
+                </button>
+                </div>
+            
+                <div style="float: left; padding: 35px;">
+                <h1 v-text="product9.subject"></h1> <!--This section is for the subject geography--> 
+                <img v-bind:src="product9.image" height="125px" width="125px">
+                <p v-text="product9.location"></p>
+                <p>Price: £{{product9.price}} per hour</p>
+                <p>Spaces available {{product9.availableSpaces}}</p>
+                <button v-on:click='addToCart' v-if="available"  value="add">
+                    Add to cart
+                </button>
+                <button disabled='disabled' v-else>
+                    Add to cart
+                </button>
+                </div>
+
+                <div style="float: left; padding: 35px;">
+                <h1 v-text="product10.subject"></h1> <!--This section is for the subject sociology--> 
+                <img v-bind:src="product10.image" height="125px" width="125px">
+                <p v-text="product10.location"></p>
+                <p>Price: £{{product10.price}} per hour</p>
+                <p>Spaces available {{product10.availableSpaces}}</p>
+                <button v-on:click='addToCart' v-if="available"  value="add">
+                    Add to cart
+                </button>
+                <button disabled='disabled' v-else>
+                    Add to cart
+                </button>
+                </div>
+
+            </div>
+
+            <div v-else> <!--shows checkout page-->
+                <h2>Check Out</h2>
+                <p>
+                    <strong>First Name:</strong>
+                    <input v-model.trim='order.firstName'>
+                </p>
+                <p>
+                    <strong>Last Name:</strong>
+                    <input v-model.trim='order.lastName'>
+                </p>
+                <p>
+                    <strong>Address:</strong>
+                    <input v-model='order.address'>
+                </p>
+                <p>
+                    <strong>City:</strong>
+                    <input v-model='order.city'>
+                </p>
+                <p>
+                    <strong>State: </strong>
+                        <select v-model='order.State'>
+                            <option disabled value="">State</option>
+                            <option value=>AL</option>
+                            <option value=>AR</option>
+                            <option value=>CA</option>
+                            <option value=>NV</option>
+                        </select>
+                </p>
+                <p>
+                    <strong>ZIP/Postcode:</strong>
+                    <input v-model='order.ZIP'>
+                </p>
+                <p>
+                    <strong>Phone Number:</strong>
+                    <input v-model.number='order.phonenumber'>
+                </p>
+                <p>
+                    <input type="Checkbox" id='gift' v-model='order.gift' 
+                    :true-value= 'order.sendGift' :false-value= 'order.dontSendGift'>
+                     <label for='gift'>Ship as a gift?</label>
+                </p>
+                <p>
+                    <input type="radio" id='home' value='home' v-model='order.method'>
+                    <label for="home">Home</label>
+                    <input type="radio" id='business' value='business' v-model='order.method'>
+                    <label for="business">Business</label>
+                </p>
+                <h2>Confirmation of Customer Details</h2>
+                <p>First Name: {{order.firstName}}</p>
+                <p>Last Name: {{order.lastName}}</p>
+                <p>Address: {{order.address}}</p>
+                <p>City: {{order.city}}</p>
+                <p>State: {{order.state}}</p>
+                <p>Postcode: {{order.ZIP}}</p>
+                <p>Phone Number: {{order.phonenumber}}</p>
+                <p>Ship as a gift?: {{order.gift}}</p>
+                
+                <button @click='submitForm'>Submit Your Order</button>
         </div>
         
 
@@ -34,7 +221,8 @@
             el: '#app', // link to element in div tags
             data: {
                 sitename: 'After school club',
-                product: {
+                showProduct: true,
+                product: { //ENGLISH SUBJECT
                     id: 1000,
                     subject: "English",
                     location: "London",
@@ -42,18 +230,117 @@
                     image: "english.jpg",
                     availableSpaces: 5,
                 },
+
+                product2: { //MATHS SUBJECT
+                    id: 2000,
+                    subject: "Maths",
+                    location: "London",
+                    price: 25,
+                    image: "maths.jpg",
+                    availableSpaces: 5,
+                },
+
+                product3: { //BIOLOGY SUBJECT
+                    id: 3000,
+                    subject: "Biology",
+                    location: "London",
+                    price: 25,
+                    image: "science.jpg",
+                    availableSpaces: 5,
+                },
+
+                product4: { //CHEMISTRY SUBJECT
+                    id: 4000,
+                    subject: "Chemistry",
+                    location: "London",
+                    price: 20,
+                    image: "science.jpg",
+                    availableSpaces: 5,
+                },
+
+                product5: { //PHYSICS SUBJECT
+                    id: 5000,
+                    subject: "Physics",
+                    location: "London",
+                    price: 25,
+                    image: "science.jpg",
+                    availableSpaces: 5,
+                },
+
+                product6: { //ART SUBJECT
+                    id: 6000,
+                    subject: "Art",
+                    location: "London",
+                    price: 20,
+                    image: "art.jpg",
+                    availableSpaces: 5,
+                },
+
+                product7: { //FOODTECH SUBJECT
+                    id: 7000,
+                    subject: "FoodTech",
+                    location: "London",
+                    price: 20,
+                    image: "foodtech.jpg",
+                    availableSpaces: 5,
+                },
+
+                product8: { //HISTORY SUBJECT
+                    id: 8000,
+                    subject: "History",
+                    location: "London",
+                    price: 25,
+                    image: "history.jpg",
+                    availableSpaces: 5,
+                },
+
+                product9: { //GEOGRAPHY SUBJECT
+                    id: 9000,
+                    subject: "Geography",
+                    location: "London",
+                    price: 25,
+                    image: "geography.jpg",
+                    availableSpaces: 5,
+                },
+
+                product10: { //SOCIOLOGY SUBJECT
+                    id: 10000,
+                    subject: "Sociology",
+                    location: "London",
+                    price: 20,
+                    image: "sociology.jpg",
+                    availableSpaces: 5,
+                },
+
+
                 cart: [], //cart array
                 showProduct: true,
+                order: {
+                    firstName: '',
+                    lastName: '',
+                    address: '',
+                    city: '',
+                    state:'',
+                    postcode: '',
+                    gift: '',
+                    method: 'home',
+                    sendGift: 'Send as a Gift',
+                    dontSendGift: 'Do not send as a gift',
+                }
+                
             },
+            
             methods: {
                 addToCart: function(){
                     this.cart.push(this.product.id)
                 },
-
                 showCheckout: function() {
                     if (this.showProduct) this.showProduct = false ;
                     else this.showProduct = true ; // this will switch the values
                 },
+                submitForm() {
+                    alert('Your order has been placed! We hope to see you soon!')
+                }
             },
             computed: { //computed property object
                 cartItemCount: function (){
