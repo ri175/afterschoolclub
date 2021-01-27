@@ -11,3 +11,7 @@ you should be able to see the commits. Please read them as there seem's to be an
 
 
 I am still having issues with GitHub. I am still having to manually add everything in.
+
+
+
+All relevant files were added and images were removed and re-added because of the change in format.
